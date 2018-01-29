@@ -14,10 +14,10 @@ def parseCrossword(filename):
                 i += 1
             grid.append(row)
     
-    return grid
+    return grid #grid: [[0,1,0,...],[0,0,1,..],...]
 
 def parseWords(filename):
-    """Parse the words into a list"""
+    """Parse the words into a list. It returns the letters of the words in the list too."""
     L = []
     letters = []
     with open(filename, "r") as f:
@@ -33,7 +33,7 @@ def parseWords(filename):
 def parseVar(filename):
     """It returns variables adapted for the model"""
     grid = parseCrossword(filename)
-    var = [] #variables : tuples ((x,y),(x',y')) ;(x,y)=(x',y') if it's a cell
+    var = [] #variables : ((x,y),(x',y')) if it's a sequence ;(x,y)=(x,y) if it's a cell
     n = len(grid)
     m = len(grid[0])
     buffer_line = []
