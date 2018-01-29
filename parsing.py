@@ -19,11 +19,16 @@ def parseCrossword(filename):
 def parseWords(filename):
     """Parse the words into a list"""
     L = []
+    letters = []
     with open(filename, "r") as f:
         lines = f.readlines()
         for line in lines:
             L.append(line.replace("\n",""))
-    return L
+    for word in L:
+        for letter in word:
+            letters.append(letter)
+    letters = list(set(letters))
+    return L, letters
 
 def parseVar(filename):
     """It returns variables adapted for the model"""
