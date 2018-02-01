@@ -12,13 +12,13 @@ vocabulary.
 All the functions are documented in the source code.
 
 
-### Variables
+## Variables
 - the cells of the crossword that we need to fill, with their coordinates. The domain is the letters in the dictionnary
 - the horizontal and vertical sequences of cells that we need to fill, coded
 with the coordinates of the first and the last cell of a sequence. The domain is
 the list of words that match the length of the sequence for each sequence.
 
-### Constraints
+## Constraints
 For each sequence, we add a constraint to each cell of a sequence.
 The constraint is between the sequence and each cell of that sequence, and we
 enforce that a word can be included in the beginning of that sequence (ie for
@@ -34,8 +34,10 @@ programming problem
 
 ## Results
 We tried with arc consistency method and without. Here are our results :
-- without arc consistency : exec time for crossword2 is around 21 sec on one
-computer
-- with arc consistency : exec time for crossword2 is around 27 sec on one
-computer
-=> Ici l'arc consistance n'améliore pas le temps d'éxecution.
+- without arc consistency : 
+    - exec time for crossword2 is around 21 sec on one computer
+    - exec time for crossword2 is around 38 sec on one computer
+- with arc consistency : 
+    - exec time for crossword2 is around 27 sec on one computer
+    - exec time for crossword2 is around 51 sec on one computer
+=> In this case, the arc consistency doesn't improve the exec time.
