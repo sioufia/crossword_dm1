@@ -78,6 +78,7 @@ def main(crossword_file, crossword_dico, maintain_arc_consistency):
                 i += 1 #the position of the letter within the sequence
 
     if maintain_arc_consistency == "y":
+        print("Using arc consistency")
         P.maintain_arc_consistency()
     sol = P.solve()
 
@@ -90,5 +91,5 @@ def main(crossword_file, crossword_dico, maintain_arc_consistency):
 if __name__ == "__main__":
     crossword_file = input("Path of the crossword file: ")
     crossword_dico = input("Path of the crossword dico: ")
-    maintain_arc_consistency = input("Arc Consistency (y/N) :")
+    maintain_arc_consistency = input("Arc Consistency (y/N) : ")
     main(crossword_file, crossword_dico, maintain_arc_consistency)
